@@ -28,9 +28,22 @@ public class Task07 {
         Scanner scanner = new Scanner(System.in);
         System.out.print("Введите размер массива: ");
         int len = scanner.nextInt();
-
-        int[] arr;
         // TODO: Пишите код здесь
-
+        int[] arr = new int[len]; int colnam=0;
+        for (int i = 0; i < arr.length; i++)
+        {
+            arr[i] = rnd.nextInt(14)+3;
+        }
+        for(int t=0;t<arr.length;t++)
+        {
+            for(int j=t+1;j<arr.length;j++)
+            {
+                if(arr[t]==arr[j]) colnam++;
+            }
+            if(colnam>1){
+                System.out.print(arr[t]+" - "+colnam+" раза\n");
+            }
+            colnam=0;
+        }
     }
 }
