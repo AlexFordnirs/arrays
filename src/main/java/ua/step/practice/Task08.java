@@ -30,8 +30,7 @@ public class Task08 {
         Scanner scanner = new Scanner(System.in);
         System.out.print("Введите размер массива: ");
         int len = scanner.nextInt();
- int L=97,R=122; int targetStringLength = 1;
-        char[] arr = new char[len]; int colnam=0,ht=9;String gt=""; char arr2[]= new char[arr.length];int arr3[]= new int[arr.length];
+        char[] arr = new char[len]; int colnam=0,ht=9;char arr2[]= new char[arr.length];int arr3[]= new int[arr.length];
 
         for(int i=0;i<arr.length;i++)
         {char random_3_Char = (char) (97 + rnd.nextInt(26));
