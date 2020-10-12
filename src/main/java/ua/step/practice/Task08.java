@@ -31,11 +31,11 @@ public class Task08 {
         System.out.print("Введите размер массива: ");
         int len = scanner.nextInt();
  int L=97,R=122; int targetStringLength = 1;
-        char[] arr = new char[len]; int colnam=0,ht=9;String gt=""; char arr2[][]= new char[2][arr.length];
+        char[] arr = new char[len]; int colnam=0,ht=9;String gt=""; char arr2[]= new char[arr.length];int arr3[]= new int[arr.length];
 
         for(int i=0;i<arr.length;i++)
         {char random_3_Char = (char) (97 + rnd.nextInt(26));
-            arr[i] =random_3_Char;arr2[0][i]='⌂';
+            arr[i] =random_3_Char;arr2[i]='⌂';
         }
 
         for(int t=0;t<arr.length;t++)
@@ -43,18 +43,22 @@ public class Task08 {
             for(int j=t;j<arr.length;j++)
             {
                 if(arr[t]==arr[j]) {colnam++;}
-            }
-            if(colnam>=4)
+            } if(colnam>=4)
+        {
+            for(int i=0;i<arr.length;i++)
             {
-                arr2[0][t]=arr[t];arr2[1][t]+=colnam;
+                if(arr2[i]==arr[t]) {ht++; }
+            }
+            if(ht==9){arr2[t]=arr[t];arr3[t]+=colnam; }
             }
             colnam=0;
+            ht=9;
         }
         for(int t=0;t<arr.length;t++)
         {
-            if(arr2[0][t]!='⌂')
+            if(arr2[t]!='⌂')
             {
-                System.out.print(arr2[0][t]+" - "+arr2[1][t]+" раза\n");
+                System.out.print(arr2[t]+" - "+arr3[t]+" раза\n");
             }
         }
     }
