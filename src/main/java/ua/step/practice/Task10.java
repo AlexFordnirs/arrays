@@ -29,7 +29,7 @@ public class Task10 {
         System.out.print("Введите размер массива: ");
         int len = scanner.nextInt();
         // TODO: Пишите код здесь
-        int[] arr = new int[len]; int ar=0;
+        int[] arr = new int[len]; int ar=0,r=0,s=0;
         for (int i = 0; i < arr.length; i++)
         {
             arr[i] = rnd.nextInt(33)+0;
@@ -39,15 +39,18 @@ public class Task10 {
             if(i!=0&&i!=arr.length)
             {
                 if(arr[i-1]!=0&&arr[i]!=0&&arr[i-1]!=0)
-                if(arr[i]%arr[i+1]==0&&arr[i]%arr[i-1]==0)
-                {ar++;
-                    System.out.print("исходный массив [");
-                    for(int t=0;t<arr.length;t++)
+                {
+                    if (arr[i] % arr[i + 1] == 0 && arr[i] % arr[i - 1] == 0)
                     {
-                        System.out.print(arr[t]+", ");
+                        ar++;
+                        System.out.print("исходный массив [");
+                        for (int t = 0; t < arr.length; t++)
+                        {
+                            System.out.print(arr[t] + ", ");
+                        }
+                        System.out.print("]");
+                        System.out.println("Индекс элемента " + i);
                     }
-                    System.out.print("]");
-                    System.out.println("Индекс элемента "+i);
                 }
             }
         }
