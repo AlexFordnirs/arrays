@@ -43,16 +43,25 @@ public class Task11 {
         {
             arr[i] = rnd.nextInt(100+1)+0;
         }
-        System.out.print("результат");
-        for (int i = 0; i < arr.length; i+=m)
+
+        System.out.print("исходный массив [");
+        for (int t = 0; t < arr.length; t++)
         {
+            if(t+1==arr.length){  System.out.print(arr[t]);}else{
+                System.out.print(arr[t]+", ");}
+        }
+        System.out.print("]");
+        System.out.print("\nрезультат\n");
+        for (int i = 0; i < arr.length; i+=m)
+        { if(u+m>n){u+=1;}else{u+=m;}
             System.out.print("[");
-            for(int t=i;t<m+u;t++)
+            for(int t=i;t<u;t++)
             {
-                if(t+1>=m+u){  System.out.print(arr[t]);}else{
+                if(t+1>=u){  System.out.print(arr[t]);}else{
                     System.out.print(arr[t]+", ");}
             }
-            u+=m;
+
+
             System.out.print("]");
             System.out.println();
         }
