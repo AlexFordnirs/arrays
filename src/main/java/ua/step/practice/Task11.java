@@ -37,8 +37,25 @@ public class Task11 {
         int n = scanner.nextInt();
         int m = scanner.nextInt();
 
-        int[] arr;
+        int[] arr=new int [n]; int u=0;
         // TODO: Пишите код здесь
+        for (int i = 0; i < arr.length; i++)
+        {
+            arr[i] = rnd.nextInt(100+1)+0;
+        }
+        System.out.print("результат");
+        for (int i = 0; i < arr.length; i+=m)
+        {
+            System.out.print("[");
+            for(int t=i;t<m+u;t++)
+            {
+                if(t+1>=m+u){  System.out.print(arr[t]);}else{
+                    System.out.print(arr[t]+", ");}
+            }
+            u+=m;
+            System.out.print("]");
+            System.out.println();
+        }
 
     }
 }
