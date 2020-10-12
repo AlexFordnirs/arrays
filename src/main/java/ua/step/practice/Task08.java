@@ -30,29 +30,29 @@ public class Task08 {
         Scanner scanner = new Scanner(System.in);
         System.out.print("Введите размер массива: ");
         int len = scanner.nextInt();
+ int L=97,R=122; int targetStringLength = 1;
+        char[] arr = new char[len]; int colnam=0,ht=9;String gt=""; char arr2[][]= new char[2][arr.length];
 
-        int[] arr = new int[len]; int colnam=0,ht=9;String gt=""; String arr2[][]= new String[2][arr.length];
+        for(int i=0;i<arr.length;i++)
+        {char random_3_Char = (char) (97 + rnd.nextInt(26));
+            arr[i] =random_3_Char;arr2[0][i]='⌂';
+        }
 
         for(int t=0;t<arr.length;t++)
         {
             for(int j=t;j<arr.length;j++)
             {
-                if(args[t]==args[j]) {colnam++; gt=args[t];}
+                if(arr[t]==arr[j]) {colnam++;}
             }
-            if(colnam>=0)
+            if(colnam>=4)
             {
-                for(int i=0;i<arr.length;i++)
-                {
-                    if(arr2[0][i]==gt) {ht++; }
-                }
-                if(ht==9){arr2[0][t]=gt;arr2[1][t]="colnam"; }
+                arr2[0][t]=arr[t];arr2[1][t]+=colnam;
             }
-            ht=9;
             colnam=0;
         }
         for(int t=0;t<arr.length;t++)
         {
-            if(arr2[0][t]!="")
+            if(arr2[0][t]!='⌂')
             {
                 System.out.print(arr2[0][t]+" - "+arr2[1][t]+" раза\n");
             }
