@@ -27,7 +27,7 @@ public class Task05 {
         int[] arr = new int[10]; int colnam=0,gt=0,ht=9; int arr2[][]= new int[2][arr.length];
         for (int i = 0; i < arr.length; i++)
         {
-            arr[i] = rnd.nextInt(11)-5;arr2[0][i]=9;
+            arr[i] = rnd.nextInt(6+5)-5;arr2[0][i]=9;
         }
         for(int t=0;t<arr.length;t++)
         {
@@ -35,7 +35,7 @@ public class Task05 {
             {
                 if(arr[t]==arr[j]) {++colnam; gt=arr[t];}
             }
-            if(colnam>1)
+            if(colnam>=1)
             {
             for(int i=0;i<arr.length;i++)
             {
@@ -46,9 +46,6 @@ public class Task05 {
             ht=9;
             colnam=0;
         }
-        for(int t=0;t<arr.length;t++)
-        { System.out.print(arr[t]+" ");}
-        System.out.println();
 for(int t=0;t<arr.length;t++)
 {
     if(arr2[0][t]!=9)
@@ -56,9 +53,6 @@ for(int t=0;t<arr.length;t++)
     System.out.print(arr2[0][t]+" - "+arr2[1][t]+" раза\n");
     }
 }
-
     }
-
-
 }
 

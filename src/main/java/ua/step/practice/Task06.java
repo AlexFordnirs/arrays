@@ -30,6 +30,30 @@ public class Task06 {
         // Использовать для генерирования элементов массива
         Random rnd = new Random(seed);
 
-        // TODO: Пишите код здесь
+
+        int[] arr = new int[10];
+        int colnam = 0, gt = 0, ht = 9;
+        int arr2[][] = new int[2][arr.length];
+        for (int i = 0; i < arr.length; i++) {
+            arr[i] = rnd.nextInt(6 + 5) - 5;
+            arr2[0][i] = 9;
+        }
+        for(int i=0;i<arr.length;i++)
+        {
+            for(int t=0;t<arr.length;t++)
+            {
+                if(arr[i]==arr[t])
+                {
+                    arr2[0][t]=arr[i];arr2[1][t]+=1;
+                }
+            }
+        }
+        for(int i=0;i<arr.length;i++)
+        {
+            if(arr2[1][i]==1)
+            {
+                System.out.print(arr2[0][i]+" -> "+i +" индекс\n");
+            }
+        }
     }
 }

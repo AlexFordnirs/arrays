@@ -29,21 +29,34 @@ public class Task07 {
         System.out.print("Введите размер массива: ");
         int len = scanner.nextInt();
         // TODO: Пишите код здесь
-        int[] arr = new int[len]; int colnam=0;
+        int[] arr = new int[len]; int colnam=0,gt=0,ht=9; int arr2[][]= new int[2][arr.length];
         for (int i = 0; i < arr.length; i++)
         {
-            arr[i] = rnd.nextInt(14)+3;
+            arr[i] = rnd.nextInt(11)+3;arr2[0][i]=20;
         }
         for(int t=0;t<arr.length;t++)
         {
-            for(int j=t+1;j<arr.length;j++)
+            for(int j=t;j<arr.length;j++)
             {
-                if(arr[t]==arr[j]) colnam++;
+                if(arr[t]==arr[j]) {colnam++; gt=arr[t];}
             }
-            if(colnam>1){
-                System.out.print(arr[t]+" - "+colnam+" раза\n");
+            if(colnam>=0)
+            {
+                for(int i=0;i<arr.length;i++)
+                {
+                    if(arr2[0][i]==gt) {ht++; }
+                }
+                if(ht==9){arr2[0][t]=gt;arr2[1][t]=colnam; }
             }
+            ht=9;
             colnam=0;
+        }
+        for(int t=0;t<arr.length;t++)
+        {
+            if(arr2[0][t]!=20)
+            {
+                System.out.print(arr2[0][t]+" - "+arr2[1][t]+" раза\n");
+            }
         }
     }
 }
