@@ -29,27 +29,28 @@ public class Task10 {
         System.out.print("Введите размер массива: ");
         int len = scanner.nextInt();
         // TODO: Пишите код здесь
-        int[] arr = new int[len]; int ar=0,r=0,s=0;
+        int[] arr = new int[len]; int ar=0,r=0,s=0,w=0;
         for (int i = 0; i < arr.length; i++)
         {
-            arr[i] = rnd.nextInt(33)+0;
+            arr[i] = rnd.nextInt(33+1)+0;
         }
         for (int i = 0; i < arr.length; i++)
         {
-            if(i!=0&&i!=arr.length)
+            if(i!=0&&i<arr.length-1)
             {
-                if(arr[i-1]!=0&&arr[i]!=0&&arr[i-1]!=0)
-                {
-                    if (arr[i] % arr[i + 1] == 0 && arr[i] % arr[i - 1] == 0)
+                if(arr[i-1]!=0&&arr[i]!=0&&arr[i+1]!=0)
+                { r=arr[i]; s=arr[i+1]; w=arr[i-1];
+                    if (r % s == 0 && r % w == 0)
                     {
                         ar++;
                         System.out.print("исходный массив [");
                         for (int t = 0; t < arr.length; t++)
                         {
-                            System.out.print(arr[t] + ", ");
+                            if(t+1==arr.length){  System.out.print(arr[t]);}else{
+                                System.out.print(arr[t]+", ");}
                         }
                         System.out.print("]");
-                        System.out.println("Индекс элемента " + i);
+                        System.out.println("\nИндекс элемента " + i);
                     }
                 }
             }
@@ -58,10 +59,11 @@ public class Task10 {
          System.out.print("исходный массив [");
          for(int t=0;t<arr.length;t++)
          {
-             System.out.print(arr[t]+", ");
+             if(t+1==arr.length){  System.out.print(arr[t]);}else{
+             System.out.print(arr[t]+", ");}
          }
          System.out.print("]");
-         System.out.println("индекс элемента -1");
+         System.out.println("\nиндекс элемента -1");
      }
 
     }
