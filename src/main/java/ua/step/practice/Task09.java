@@ -32,26 +32,29 @@ public class Task09 {
         int[] arr = new int[len];int[] arr2 = new int[len];
         for (int i = 0; i < arr.length; i++)
         {
-            arr[i] = rnd.nextInt(len+2)-2;
+            arr[i] = rnd.nextInt(len+3)-2;
         }
         for (int i = 0; i < arr.length; i++)
-        { arr2[i]= arr[i];
-            if(arr[i]<-1)
+        {
+            if(arr[i]<=-1)
             {
             arr2[i] = arr[i]*arr[i];
             }
+            else {arr2[i]= arr[i];}
         }
         System.out.print("исходный массив [");
         for(int t=0;t<arr.length;t++)
         {
-                System.out.print(arr[t]+", ");
+            if(t+1==arr.length){  System.out.print(arr[t]);}else{
+                System.out.print(arr[t]+", ");}
         }
         System.out.print("]");
         System.out.println();
         System.out.print("результат [");
         for(int t=0;t<arr.length;t++)
         {
-            System.out.print(arr2[t]+", ");
+            if(t+1==arr.length){  System.out.print(arr2[t]);}else{
+                System.out.print(arr2[t]+", ");}
         }
         System.out.print("]");
     }
